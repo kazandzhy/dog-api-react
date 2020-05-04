@@ -12,7 +12,7 @@ export default class DogService {
 
   getAllDogs = async () => {
     const res = await this.getResource(`s/list/all/`);
-    let result = Object.keys(res.message).slice(0, 10);
+    let result = Object.keys(res.message);
     return result;
   };
 

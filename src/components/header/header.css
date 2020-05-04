@@ -1,0 +1,39 @@
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 1rem;
+  margin-top: 2em;
+  display: flex;
+}
+
+.header .logo {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.5rem;
+  padding-left: 1rem;
+}
+
+.breeds-link,
+.random-breed-link {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.header a:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 650px) {
+  .header {
+    display: block;
+    margin-bottom: 0em;
+    margin-top: 1em;
+  }
+
+  .breeds-link {
+    margin-top: 0em;
+  }
+
+  .random-breed-link {
+    margin-bottom: 1em;
+  }
+}

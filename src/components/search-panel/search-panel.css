@@ -1,0 +1,22 @@
+.search {
+  width: 15em;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2em;
+}
+
+.search-input {
+  width: auto;
+  height: 3em;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 750px) {
+  .search-input {
+    height: 2.5em;
+  }
+
+  .search {
+    margin-top: 2em;
+  }
+}

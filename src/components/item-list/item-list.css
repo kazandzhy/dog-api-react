@@ -1,11 +1,44 @@
 .item-list {
-  margin-bottom: 1rem;
+  width: 40em;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  margin-top: 2em;
 }
 
 .item-list .list-group-item {
   cursor: pointer;
+  background-color: #f2f2f2;
 }
 
 .item-list .list-group-item:hover {
-  background-color: #444;
+  background-color: #a3a3a3;
+  color: white;
+}
+
+ul.item-list.list-group {
+  position: relative;
+  height: 15.4em;
+  overflow: scroll;
+
+  border: 1px solid #ccc;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+@media only screen and (max-width: 750px) {
+  .item-list {
+    width: 80%;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .item-list {
+    width: 95%;
+    margin-right: 0%;
+  }
 }

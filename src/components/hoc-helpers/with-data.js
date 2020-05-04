@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import Spinner from '../spinner';
-import ErrorIndicator from '../error-indicator';
+import React, { Component } from "react";
+import Spinner from "../spinner";
+import ErrorIndicator from "../error-indicator";
 
 const withData = (View) => {
   return class extends Component {
-
     state = {
       data: null,
       loading: true,
-      error: false
+      error: false,
     };
 
     componentDidUpdate(prevProps) {
@@ -22,29 +21,40 @@ const withData = (View) => {
     }
 
     update() {
-      this.setState( {
+      this.setState({
         loading: true,
-        error: false
+        error: false,
       });
 
-      this.props.getData()
+      this.props
+        .getData()
         .then((data) => {
           this.setState({
             data,
-            loading: false
+            loading: false,
           });
         })
         .catch(() => {
           this.setState({
             error: true,
-            loading: false
+            loading: false,
           });
         });
     }
 
+    search = (dogNames, term) => {
+      if (term.length === 0) {
+        return dogNames;
+      }
+      return dogNames.filter((dogName) => {
+        return dogName.toLowerCase().indexOf(term.toLowerCase()) > -1;
+      });
+    };
 
     render() {
       const { data, loading, error } = this.state;
+      const { term } = this.props;
+      const visibleItems = this.search(data, term);
 
       if (loading) {
         return <Spinner />;
@@ -54,7 +64,7 @@ const withData = (View) => {
         return <ErrorIndicator />;
       }
 
-      return <View {...this.props} data={data} />;
+      return <View {...this.props} data={visibleItems} />;
     }
   };
 };
