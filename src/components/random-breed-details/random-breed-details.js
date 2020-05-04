@@ -31,6 +31,15 @@ export default class RandomBreedDetails extends Component {
     clearInterval(this.interval);
   }
 
+  onDogLoaded = (dogName, item) => {
+    this.setState({
+      dogName,
+      image: item.message,
+      loading: false,
+      error: false,
+    });
+  };
+
   onError = (err) => {
     this.setState({
       error: true,
@@ -40,34 +49,19 @@ export default class RandomBreedDetails extends Component {
 
   updateDog = () => {
     const { getAllDogs, getDog } = this.props;
-    this.getData(getAllDogs());
+
+    getAllDogs().then((dogs) => {
+      this.setState({ dogs });
+    });
+
     if (this.state.dogs !== null) {
       const id = Math.floor(Math.random() * 94);
       const dogName = this.state.dogs[id];
 
       getDog(dogName)
-        .then((item) => {
-          Promise.resolve(item).then((value) => {
-            this.setState({
-              dogName,
-              image: value.message,
-              loading: false,
-              error: false,
-            });
-            return value;
-          });
-        })
+        .then((item) => this.onDogLoaded(dogName, item))
         .catch(this.onError);
     }
-  };
-
-  getData = (getAllDogs) => {
-    getAllDogs.then((item) => {
-      Promise.resolve(item).then((value) => {
-        this.setState({ dogs: Object.values(value) });
-        return value;
-      });
-    });
   };
 
   render() {

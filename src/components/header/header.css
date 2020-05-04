@@ -22,6 +22,10 @@
   color: black;
 }
 
+.header a:focus {
+  outline: 0;
+}
+
 @media only screen and (max-width: 650px) {
   .header {
     display: block;

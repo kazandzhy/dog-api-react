@@ -22,6 +22,15 @@ export default class ItemDetails extends Component {
     }
   }
 
+  onItemLoaded = (itemName, item) => {
+    this.setState({
+      itemName,
+      image: item.message,
+      loading: false,
+      error: false,
+    });
+  };
+
   onError = () => {
     this.setState({
       error: true,
@@ -35,19 +44,8 @@ export default class ItemDetails extends Component {
     if (!itemName) {
       return null;
     }
-
     getDog(itemName)
-      .then((item) => {
-        Promise.resolve(item).then((value) => {
-          this.setState({
-            itemName,
-            image: value.message,
-            loading: false,
-            error: false,
-          });
-          return value;
-        });
-      })
+      .then((item) => this.onItemLoaded(itemName, item))
       .catch(this.onError);
   }
 

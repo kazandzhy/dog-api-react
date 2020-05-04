@@ -21,8 +21,8 @@ export default class app extends Component {
       <DogServiceProvider value={dogService}>
         <ErrorBoundary>
           <Router>
-            <div className="App">
-              <div className="Container">
+            <div className="app">
+              <div className="container">
                 <Header />
                 <Switch>
                   <Route path="/" component={BreedsPage} exact />

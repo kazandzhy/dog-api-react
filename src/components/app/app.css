@@ -1,4 +1,4 @@
-.Container {
+.container {
   width: 980px;
   min-width: 300px;
   margin-left: auto;
@@ -7,20 +7,20 @@
 }
 
 @media only screen and (max-width: 1050px) {
-  .Container {
+  .container {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 
 @media only screen and (max-width: 980px) {
-  .Container {
+  .container {
     width: 100%;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  .Container {
+  .container {
     padding-left: 10px;
     padding-right: 10px;
   }
