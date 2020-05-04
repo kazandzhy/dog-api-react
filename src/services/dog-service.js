@@ -1,8 +1,10 @@
 export default class DogService {
-  _apiBase = "http://dog.ceo/api/breed";
+  _apiBase = "https://dog.ceo/api/breed";
 
   getResource = async (url) => {
-    const res = await fetch(`${this._apiBase}${url}`);
+    const res = await fetch(
+      `https://cors-anywhere.herokuapp.com/${this._apiBase}${url}`
+    );
 
     if (!res.ok) {
       throw new Error(`Could not fetch ${url} , received ${res.status}`);
