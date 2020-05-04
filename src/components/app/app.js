@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { BreedsPage, RandomBreedPage } from "../pages";
+import { BreedsPage } from "../pages";
+import RandomBreedDetails from "../random-breed-details";
 
 import Header from "../header";
 import ErrorBoundary from "../error-boundary";
@@ -26,7 +27,7 @@ export default class app extends Component {
                 <Header />
                 <Switch>
                   <Route path="/" component={BreedsPage} exact />
-                  <Route path="/random-breed" component={RandomBreedPage} />
+                  <Route path="/random-breed" component={RandomBreedDetails} />
                 </Switch>
               </div>
             </div>

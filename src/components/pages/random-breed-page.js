@@ -3,20 +3,17 @@ import PropTypes from "prop-types";
 
 import Spinner from "../spinner";
 import ErrorIndicator from "../error-indicator";
-import DogService from "../../services/dog-service";
 
 import "./random-breed-page.css";
 
 export default class RandomBreedPage extends Component {
   static defaultProps = {
-    updateInterval: 4000,
+    updateInterval: 7000,
   };
 
   static propTypes = {
     updateInterval: PropTypes.number,
   };
-
-  dogService = new DogService();
 
   state = {
     dogName: null,
@@ -42,13 +39,13 @@ export default class RandomBreedPage extends Component {
   };
 
   updateDog = () => {
-    this.getData();
+    const { getAllDogs, getDog } = this.props;
+    this.getData(getAllDogs());
     if (this.state.dogs !== null) {
       const id = Math.floor(Math.random() * 94);
       const dogName = this.state.dogs[id];
 
-      this.dogService
-        .getDog(dogName)
+      getDog(dogName)
         .then((item) => {
           Promise.resolve(item).then((value) => {
             this.setState({
@@ -64,8 +61,8 @@ export default class RandomBreedPage extends Component {
     }
   };
 
-  getData = () => {
-    this.dogService.getAllDogs().then((item) => {
+  getData = (getAllDogs) => {
+    getAllDogs.then((item) => {
       Promise.resolve(item).then((value) => {
         this.setState({ dogs: Object.values(value) });
         return value;
