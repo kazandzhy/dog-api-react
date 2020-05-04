@@ -1,5 +1,5 @@
 export default class DogService {
-  _apiBase = "https://dog.ceo/api/breed";
+  _apiBase = "http://dog.ceo/api/breed";
 
   getResource = async (url) => {
     const res = await fetch(`${this._apiBase}${url}`);
