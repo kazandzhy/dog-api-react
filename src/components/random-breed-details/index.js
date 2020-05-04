@@ -1,3 +1,1 @@
-import RandomBreedDetails from "./random-breed-details";
-
-export default RandomBreedDetails;
+export { default } from "./random-breed-details";
