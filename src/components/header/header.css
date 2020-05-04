@@ -33,11 +33,17 @@
     margin-top: 1em;
   }
 
+  .header .logo {
+    padding-left: 0;
+  }
+
   .breeds-link {
     margin-top: 0em;
+    margin: 0 auto;
   }
 
   .random-breed-link {
     margin-bottom: 1em;
+    margin: 0 auto;
   }
 }

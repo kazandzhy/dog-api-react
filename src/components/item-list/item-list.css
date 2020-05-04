@@ -39,6 +39,5 @@ ul.item-list.list-group {
 @media only screen and (max-width: 500px) {
   .item-list {
     width: 95%;
-    margin-right: 0%;
   }
 }
