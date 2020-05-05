@@ -15,8 +15,9 @@
   border-radius: 10px;
 }
 
-span {
-  font-size: 20px;
+h5 {
+  font-weight: bold;
+  font-family: "Playfair Display", Georgia, serif;
 }
 
 @media only screen and (max-width: 650px) {

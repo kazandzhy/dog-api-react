@@ -3,12 +3,22 @@
   display: block;
   margin: 0 auto;
   margin-bottom: 2em;
+  font-family: "Playfair Display", Georgia, serif;
 }
 
 .search-input {
   width: auto;
   height: 3em;
   font-size: 18px;
+}
+
+input[type="text"]:focus {
+  border: 1px solid grey;
+  box-shadow: 1px 1px 10px 0.5px #333;
+}
+
+input[type="text"]:hover {
+  box-shadow: 1px 1px 10px 0.5px #333;
 }
 
 @media only screen and (max-width: 750px) {

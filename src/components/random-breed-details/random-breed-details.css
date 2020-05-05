@@ -1,3 +1,8 @@
+.item-details {
+  margin-top: 2em;
+  box-shadow: 1px 1px 20px 0.5px #333;
+}
+
 @media only screen and (max-width: 650px) {
   .random-breed-page {
     margin-top: 1em;

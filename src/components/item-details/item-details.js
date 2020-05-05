@@ -52,7 +52,7 @@ export default class ItemDetails extends Component {
   render() {
     const { itemName, image, loading, error } = this.state;
     if (!itemName) {
-      return <span>Select a dog from the list!</span>;
+      return <h5>Select a dog from the list!</h5>;
     }
 
     const hasData = !(loading || error);

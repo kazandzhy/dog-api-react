@@ -1,29 +1,46 @@
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 1rem;
   margin-top: 2em;
   display: flex;
+  z-index: 4;
 }
 
 .header .logo {
   font-family: "Playfair Display", Georgia, serif;
   font-size: 2.5rem;
   padding-left: 1rem;
+  text-shadow: 2px 2px 4px grey;
 }
 
-.breeds-link,
-.random-breed-link {
+.header a {
+  color: #1995ad;
   font-size: 1.5rem;
-  margin-left: 2rem;
-  margin-top: 1rem;
+  font-weight: 600;
 }
 
 .header a:hover {
-  color: black;
+  color: #0197f6;
+  font-size: 1.7rem;
+  text-decoration: none;
 }
 
 .header a:focus {
   outline: 0;
+}
+
+.breeds-link,
+.random-breed-link {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+hr {
+  border: none;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 20px 20px -20px #333;
+  margin: -20px auto 10px;
 }
 
 @media only screen and (max-width: 770px) {

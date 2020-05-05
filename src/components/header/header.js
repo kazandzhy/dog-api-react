@@ -7,11 +7,12 @@ const Header = () => {
     <header className="header row">
       <div className="logo text-dark">FindTheBestDog</div>
       <Link to="/">
-        <div className="breeds-link text-dark">Breeds</div>
+        <div className="breeds-link">Breeds</div>
       </Link>
       <Link to="/random-breed">
-        <div className="random-breed-link text-dark">RandomBreed</div>
+        <div className="random-breed-link">RandomBreed</div>
       </Link>
+      <hr />
     </header>
   );
 };
